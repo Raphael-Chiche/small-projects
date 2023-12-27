@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Popins", sans-serif;
+}
+
+:root {
+  --red: #d90429;
+  --dark-grey: #2b2d42;
+  --grey: #8d99ae;
+  --light-grey: #edf2f4;
+  --light-red: #ef233c;
+}
+
+.container {
+  width: 100%;
+  min-height: 100dvh;
+  background: linear-gradient(90deg, var(--red) 0%, var(--dark-grey) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar {
+  width: 400px;
+  height: 350px;
+  background: var(--light-grey);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: row;
+}
+
+.calendar .left {
+  width: 60%; 
+  padding: 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar .right {
+  width: 40%;
+  height: 100%; 
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--light-red);
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 25px 25px 0;
+}
+
+#date{
+    font-size: 100px;
+    font-weight: 700;
+    color: var(--dark-grey);
+}
+
+#day{
+    font-size: 30px;
+    color: var(--grey);
+}
+
+#month,#year{
+    font-size: 30px;
+    color: var(--dark-grey);
+}
+
+@media screen and (max-width: 400px) {
+  .calendar {
+    width: 90dvw;
+    height: 300px;
+    flex-direction: column;
+  }
+  .calendar .left {
+    width: 100%;
+  }
+  .calendar .right {
+    width: 100%;
+    border-radius: 0 0 25px 25px;
+  }
+  #date{
+    font-size: 80px;
+  }
+  #day{
+    font-size: 20px;
+  }
+  #month,#year{
+    font-size: 20px;
+  }
+    
+}
