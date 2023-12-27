@@ -11,11 +11,13 @@
     <div class="container">
       <p>Entre ton texte ou ton URL</p>
       <input type="text" placeholder="Texte ou URl" id="qrTxt" />
-      <div id="boxImage"> 
-        <img src="" alt="" id="qrCode" />
+      <div id="boxImage">
+          <img src="" alt="" id="qrCode" />
       </div>
       <button onclick="generateQR()">Génere ton QR CODE</button>
+      <button id="telecharger">Télecharger</button>
     </div>
     <script src="javascript.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
   </body>
 </html>

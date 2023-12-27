@@ -6,20 +6,20 @@
   }
   
   :root {
-    --purlple: #cdb4db;
-    --blue: #a2d2ff;
-    --light-blue: #bde0fe;
-    --pink: #ffafcc;
-    --light-pink: #ffc8dd;
+    --orange: #D4A373;
+    --light-orange: #FAEDCD;
+    --light-yellow: #FEFAE0;
+    --beige: #E9EDC9;
+    --light-green: #CCD5AE;
   }
   
   body {
     background: rgb(189, 224, 254);
     background: radial-gradient(
       circle,
-      rgba(189, 224, 254, 1) 0%,
-      rgba(162, 210, 255, 1) 50%,
-      rgba(205, 180, 219, 1) 100%
+      var(--beige) 0%,
+      var(--light-orange) 50%,
+      var(--orange) 100%
     );
     height: 100vh;
   }
@@ -38,7 +38,7 @@
   
   .container p{
       font-weight: 600;
-      color: var(--purple);
+      color: var(--orange);
       font-size: 18px;
       margin-bottom: 0.5rem;
   }
@@ -49,19 +49,19 @@
       margin: 10px 0;
       font-size: 18px;
       border-radius: 5px;
-      border: 2px solid var(--purlple);
+      border: 2px solid var(--orange);
       outline: none;
       transition: all 0.3s ease;
   }
   
   .container input:focus{
-      border: 2px solid var(--blue);
+      border: 2px solid var(--light-orange);
   }
   
   .container button{
       border-radius: 5px;
       width: 100%;
-      background-color: var(--pink);
+      background-color: var(--beige);
       padding: 10px 20px;
       margin: 10px 0;
       border: none;
@@ -71,12 +71,12 @@
   }
   
   .container button:hover{
-      background-color: var(--light-pink);
+      background-color: var(--orange);
       cursor: pointer;
   }
   
   .container button:active{
-      background-color: var(--blue);
+      background-color: var(--light-orange);
   }
   
   @keyframes shake {
@@ -115,7 +115,7 @@
   #boxImage.show-img{
       max-height: 300px;
       margin: 10px auto;
-      border: 1px solid var(--purple);
+      border: 2px solid var(--orange);
       max-height: 1;
   }
   

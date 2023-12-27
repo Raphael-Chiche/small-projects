@@ -15,3 +15,36 @@ function generateQR() {
     });
   }
 }
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const boxImage = document.getElementById("boxImage");
+  const qrImg = document.getElementById("qrCode");
+
+  // Fonction pour capturer la div
+  function captureDiv() {
+    html2canvas(boxImage, { useCORS: true }).then(function (canvas) {
+      // Créer un lien pour télécharger l'image
+      const link = document.createElement("a");
+      link.href = canvas.toDataURL();
+      link.download = "qrcode.png";
+      link.click();
+    });
+  }
+
+  // Appeler la fonction de capture lorsque vous le souhaitez
+  // Par exemple, en réponse à un clic sur un bouton
+  document
+    .getElementById("telecharger")
+    .addEventListener("click", function () {
+      // Vérifier si l'image du QR Code est chargée
+      if (qrImg.complete) {
+        captureDiv();
+      } else {
+        // Attendre le chargement de l'image avant de capturer la div
+        qrImg.onload = function () {
+          captureDiv();
+        };
+      }
+    });
+});
