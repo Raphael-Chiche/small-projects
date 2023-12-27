@@ -2,10 +2,6 @@
 
 Création d'un  mini cendrier qui affiche le jour, la date, le mois et l'année.
 
-## Pour commencer
-
-Entrez ici les instructions pour bien débuter avec votre projet...
-
 ## Fabriqué avec
 
 Fabriqué avec les langages suivants:
