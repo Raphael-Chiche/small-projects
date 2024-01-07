@@ -65,8 +65,11 @@ button{
     color: #fff;
     cursor: pointer;
     border-radius: 40px;
+    transition: all 0.3s ease-in-out;
 }
-
+button:hover{
+    background: #eb9710;
+}
 ul li{
     list-style: none;
     font-size: 17px;
@@ -113,4 +116,19 @@ ul li span{
 
 ul li span:hover {
     background-color: var(--grey);
+}
+
+
+@media (max-width: 540px){
+    input{
+        width: 100%;
+    }
+
+    .row{
+        flex-direction: column;
+        padding-left: 0;
+    }
+    button{
+        width: 100%;
+    }
 }
