@@ -22,7 +22,11 @@ body {
   );
   height: 100vh;
 }
-
+#colorPicker, #colorPickerBg {
+  height: 50px;
+  border: none;
+  cursor: pointer;
+}
 .container {
   width: 400px;
   padding: 25px 35px;
@@ -108,13 +112,13 @@ body {
 
 #boxImage img {
   width: 100%;
-  padding: 10px;
+  /* padding: 10px; */
 }
 
 #boxImage.show-img {
   max-height: 300px;
   margin: 10px auto;
-  border: 2px solid var(--orange);
+  /* border: 2px solid var(--orange); */
   max-height: 1;
 }
 

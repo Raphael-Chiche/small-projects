@@ -12,11 +12,20 @@
       <p>Entre ton texte ou ton URL</p>
       <input type="text" placeholder="Texte ou URl" id="qrTxt" />
       <div id="boxImage">
-          <img src="" alt="" id="qrCode" />
+        <img src="" alt="" id="qrCode" />
       </div>
       <button onclick="generateQR()">Génere ton QR CODE</button>
       <button id="telecharger">Télecharger</button>
+
+      <div class="colorpicker">
+        <p>Background-Color</p>
+        <input type="color" id="colorPickerBg" value="#ffffff" />
+        <p>Color</p>
+        <input type="color" id="colorPicker" value="#000000" />
+      </div>
+
     </div>
+
     <script src="javascript.js"></script>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
   </body>

@@ -2,22 +2,27 @@ let boxImage = document.getElementById("boxImage");
 let qrImg = document.getElementById("qrCode");
 let qrTxt = document.getElementById("qrTxt");
 let qrBtn = document.getElementById("telecharger");
+
+
+
+
 function generateQR() {
   if (qrTxt.value.length > 0) {
     qrImg.src =
       "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" +
-      qrTxt.value;
+      qrTxt.value + "&bgcolor="+document.getElementById("colorPickerBg").value.substring(1)+"&qzone=1&color="+document.getElementById("colorPicker").value.substring(1);
     boxImage.classList.add("show-img");
     qrBtn.classList.add("show-btn");
-  } else { 
+  } else {
     qrTxt.style.animation = "shake 0.5s";
     qrTxt.addEventListener("animationend", () => {
       qrTxt.style.animation = "";
     });
   }
+  document.getElementById("colorPickerBg").addEventListener("input", generateQR);
+  document.getElementById("colorPicker").addEventListener("input", generateQR);
+
 }
-
-
 document.addEventListener("DOMContentLoaded", function () {
   const boxImage = document.getElementById("boxImage");
   const qrImg = document.getElementById("qrCode");
@@ -35,17 +40,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Appeler la fonction de capture lorsque vous le souhaitez
   // Par exemple, en réponse à un clic sur un bouton
-  document
-    .getElementById("telecharger")
-    .addEventListener("click", function () {
-      // Vérifier si l'image du QR Code est chargée
-      if (qrImg.complete) {
+  document.getElementById("telecharger").addEventListener("click", function () {
+    // Vérifier si l'image du QR Code est chargée
+    if (qrImg.complete) {
+      captureDiv();
+    } else {
+      // Attendre le chargement de l'image avant de capturer la div
+      qrImg.onload = function () {
         captureDiv();
-      } else {
-        // Attendre le chargement de l'image avant de capturer la div
-        qrImg.onload = function () {
-          captureDiv();
-        };
-      }
-    });
+      };
+    }
+  });
 });
