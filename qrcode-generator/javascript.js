@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Fonction pour capturer la div
   function captureDiv() {
-    html2canvas(boxImage, { useCORS: true }).then(function (canvas) {
+    html2canvas(qrImg, { useCORS: true }).then(function (canvas) {
       // Créer un lien pour télécharger l'image
       const link = document.createElement("a");
       link.href = canvas.toDataURL();
